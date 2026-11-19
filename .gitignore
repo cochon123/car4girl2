@@ -1,0 +1,8 @@
+node_modules
+dist
+.vercel
+*.blend1
+*.log
+.DS_Store
+assets-src/**/frames/
+assets-src/**/tmp/
