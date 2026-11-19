@@ -1,0 +1,67 @@
+.stroke-badge {
+  --c: var(--candy);
+  display: grid;
+  gap: 2px;
+  padding: 14px 18px 16px;
+  border-radius: 18px;
+  background: rgba(13, 8, 18, 0.72);
+  border: 1px solid color-mix(in oklab, var(--c) 55%, transparent);
+  box-shadow: 0 0 40px -10px var(--c);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  min-width: 190px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.stroke-badge .mono {
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.stroke-badge strong {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 30px;
+  letter-spacing: -0.03em;
+  color: var(--c);
+  line-height: 1.05;
+}
+
+.stroke-badge em {
+  font-style: normal;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.nick {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.row-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.crank-deg {
+  font-size: 12px;
+  color: var(--muted);
+  min-width: 38px;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .stroke-badge {
+    min-width: 0;
+    padding: 10px 14px 12px;
+  }
+  .stroke-badge strong {
+    font-size: 22px;
+  }
+  .stage-bar .seg {
+    display: none;
+  }
+}

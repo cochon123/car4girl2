@@ -6,3 +6,4 @@ dist
 .DS_Store
 assets-src/**/frames/
 assets-src/**/tmp/
+*.tsbuildinfo

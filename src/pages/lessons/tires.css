@@ -1,0 +1,148 @@
+.sidewall-bar {
+  position: absolute;
+  left: 50%;
+  bottom: 44px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 18px;
+  max-width: calc(100% - 24px);
+  overflow-x: auto;
+}
+
+.code {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  padding: 10px 13px;
+  border-radius: 12px;
+  background: none;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--muted);
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.code:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.code.is-on {
+  background: var(--candy);
+  color: var(--ink);
+}
+
+.codebox {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #19121f;
+  border: 1px solid var(--line);
+}
+
+.codebox__code {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.codebox__code button {
+  appearance: none;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 8px;
+  font: inherit;
+  color: var(--text);
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.2);
+}
+
+.codebox__code button.is-on {
+  background: var(--candy);
+  color: var(--ink);
+  border-bottom-color: transparent;
+}
+
+.codebox__explain {
+  display: grid;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.codebox__explain strong {
+  font-family: var(--font-display);
+  color: var(--text);
+}
+
+.tread-svg {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  background: #120c17;
+}
+
+.verdict {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14.5px;
+}
+
+.verdict .mono {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  opacity: 0.8;
+}
+
+.verdict--ok {
+  color: var(--green);
+  background: rgba(78, 227, 143, 0.08);
+}
+
+.verdict--mid {
+  color: var(--lime);
+  background: rgba(214, 255, 79, 0.07);
+}
+
+.verdict--low {
+  color: var(--amber);
+  background: rgba(255, 181, 71, 0.08);
+}
+
+.verdict--bad {
+  color: var(--red);
+  background: rgba(255, 77, 94, 0.09);
+}
+
+.pressure svg {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  background: #120c17;
+}
+
+.pressure {
+  display: grid;
+  gap: 10px;
+}
+
+@media (max-width: 860px) {
+  .sidewall-bar {
+    bottom: 26px;
+  }
+  .code {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}

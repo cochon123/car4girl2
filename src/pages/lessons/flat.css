@@ -1,0 +1,29 @@
+.flat-bar {
+  position: absolute;
+  left: 50%;
+  bottom: 44px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px;
+  border-radius: 999px;
+}
+
+.flat-bar__n {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.star-svg {
+  width: 150px;
+  height: 150px;
+}
+
+@media (max-width: 860px) {
+  .flat-bar {
+    bottom: 26px;
+  }
+}
