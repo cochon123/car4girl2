@@ -20,7 +20,7 @@ export const MYTHS = [
     fact: 'Not with ABS, which nearly every car has had since the 2000s. Press hard and hold. The buzzing pedal is ABS doing its job, so keep steering.',
   },
   {
-    myth: 'You need to be “a car person” to do basic maintenance.',
+    myth: 'You need to be ‘a car person’ to do basic maintenance.',
     fact: 'Checking oil, topping up washer fluid and checking tire pressure take minutes and zero special talent. You can learn all three here today.',
   },
   {

@@ -16,10 +16,10 @@
   --rx: 14deg;
   --ry: 0deg;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr) minmax(0, 1fr);
   align-items: center;
   gap: 18px;
-  width: min(900px, 100%);
+  width: min(960px, 100%);
   padding: 30px 34px;
   border-radius: 90px 90px 50px 50px;
   background:
@@ -317,14 +317,22 @@
 
 @media (max-width: 860px) {
   .dash-stage {
-    padding: 70px 12px 30px;
-    gap: 18px;
+    padding: 66px 10px 14px;
+    gap: 12px;
+    place-content: center;
   }
   .cluster {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    padding: 18px;
-    border-radius: 40px;
-    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 34px;
+    gap: 6px 10px;
+  }
+  .gauge-svg {
+    max-width: 136px;
+    justify-self: center;
+  }
+  .dash-actions .btn {
+    padding: 11px 18px;
   }
   .cluster__mid {
     grid-column: 1 / -1;

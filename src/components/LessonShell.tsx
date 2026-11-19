@@ -6,6 +6,7 @@ import type CameraControlsImpl from 'camera-controls'
 import { lessonBySlug, nextLesson } from '../content/lessons'
 import { markDone, useDone } from '../lib/progress'
 import { LessonLights } from '../three/Studio'
+import { StageErrorBoundary } from './StageErrorBoundary'
 import './lesson.css'
 
 export type View = [number, number, number, number, number, number]
@@ -25,7 +26,7 @@ export function CameraRig({ view, minDistance = 0.3, maxDistance = 12 }: { view:
 
 export function LessonCanvas({ children, fov = 35, warm = false, shadows = true }: { children: ReactNode; fov?: number; warm?: boolean; shadows?: boolean }) {
   return (
-    <>
+    <StageErrorBoundary>
       <Canvas shadows={shadows} dpr={[1, 1.75]} camera={{ fov, near: 0.02, far: 60, position: [3, 2, 4] }} gl={{ antialias: true }}>
         <color attach="background" args={['#0d0812']} />
         <fog attach="fog" args={['#0d0812', 9, 26]} />
@@ -33,7 +34,7 @@ export function LessonCanvas({ children, fov = 35, warm = false, shadows = true 
         <Suspense fallback={null}>{children}</Suspense>
       </Canvas>
       <StageLoader />
-    </>
+    </StageErrorBoundary>
   )
 }
 
@@ -72,9 +73,11 @@ export function LessonShell({ slug, stage, children, stageOverlay, hint = 'drag 
       <div className="lesson__stage">
         {stage}
         {stageOverlay}
-        <p className="lesson__hint mono" aria-hidden="true">
-          {hint}
-        </p>
+        {hint && (
+          <p className="lesson__hint mono" aria-hidden="true">
+            {hint}
+          </p>
+        )}
       </div>
       <aside className="lesson__panel" aria-label={`${meta.title} lesson`}>
         <div className="lesson__scroll">

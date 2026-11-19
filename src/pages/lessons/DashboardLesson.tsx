@@ -250,7 +250,7 @@ export default function DashboardLesson() {
   return (
     <LessonShell
       slug="dashboard"
-      hint="tap a light · turn the key"
+      hint=""
       stage={
         <div
           className="dash-stage"

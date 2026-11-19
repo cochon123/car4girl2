@@ -6,6 +6,7 @@ import { Preloader } from '../components/Preloader'
 import { Tach } from '../components/Tach'
 import { Wordmark } from '../components/Nav'
 import { Footer } from '../components/Footer'
+import { StageErrorBoundary } from '../components/StageErrorBoundary'
 import { LESSONS } from '../content/lessons'
 import { GLOSSARY, MYTHS } from '../content/landing'
 import { IDLE_RPM, landing } from '../lib/landingState'
@@ -68,6 +69,7 @@ export default function Landing() {
     <div className="landing">
       <Preloader />
       <div className={`stage ${stageOn ? '' : 'is-off'}`} aria-hidden="true">
+        <StageErrorBoundary label="The 3D car could not load on this device.">
         <Canvas
           shadows
           dpr={lowPower ? [1, 1.25] : [1, 1.75]}
@@ -78,6 +80,7 @@ export default function Landing() {
           <PerformanceMonitor onDecline={() => setLowPower(true)} />
           <LandingScene lowPower={lowPower} />
         </Canvas>
+        </StageErrorBoundary>
       </div>
 
       <h1 className="sr-only">Car4Girl2: interactive lessons on how cars work</h1>
